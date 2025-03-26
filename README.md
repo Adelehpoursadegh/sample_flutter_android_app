@@ -9,25 +9,6 @@ A Flutter application designed to connect to devices over WiFi. The app enables 
 - **Chart Saving**: Save generated charts as images to the device gallery  
 - **Navigation**: Multiple pages accessible via a drawer menu  
 
-## Pages  
-
-1. **Home Page**:   
-   - Input field for IP address  
-   - Connect/Start button to establish communication  
-   - Connection status indicator  
-
-2. **Plot Page**:   
-   - Displays data in a chart format  
-   - Option to save the chart as an image  
-
-3. **Calibration Settings Page**:   
-   - Configure calibration settings  
-   - Save calibration values  
-
-4. **Help Page** 
-
-5. **About Page**
-
 ## Hardware Connection Details  
 
 - **Communication Method**: WiFi using TCP/IP protocol with TCP Sockets  
