@@ -26,7 +26,6 @@ class MyApp extends StatelessWidget {
       home: MyHomePage(),
       routes: {
         PlotPage.routeName: (context) => PlotPage(),
-        CalPage.routeName: (context) => CalPage(),
         HelpPage.routeName: (context) => HelpPage(),
         AboutPage.routeName: (context) => AboutPage(),
       },
@@ -234,17 +233,6 @@ class _MyHomePageState extends State<MyHomePage> {
               title: const Text('Resulted graph'),
               onTap: () {
                 Navigator.pushNamed(context, PlotPage.routeName, arguments: dataList);
-              },
-            ),
-            ListTile(
-              title: const Text('Calibration settings'),
-              onTap: () {
-                Navigator.pop(context); // Close the drawer
-                Navigator.pushNamed(context, '/cal').then((result) {
-                  if (result != null && result is bool && result) {
-                    _loadSavedNumber();
-                  }
-                });
               },
             ),
             ListTile(
@@ -522,78 +510,6 @@ class _ChartData {
   final double y;
   _ChartData(this.x, this.y);
 }
-
-class CalPage extends StatefulWidget {
-  static const routeName = '/cal';
-  @override
-  _CalPageState createState() => _CalPageState();
-}
-
-class _CalPageState extends State<CalPage> {
-  late TextEditingController _numberController;
-  late double number;
-
-  @override
-  void initState() {
-    super.initState();
-    _numberController = TextEditingController();
-    _loadNumber();
-  }
-
-  Future<void> _loadNumber() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    double savedNumber = prefs.getDouble('number') ?? 1.2;
-    setState(() {
-      number = savedNumber;
-      _numberController.text = number.toString();
-    });
-  }
-
-  Future<void> _saveNumber() async {
-    double newNumber = double.tryParse(_numberController.text) ?? number;
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setDouble('number', newNumber);
-    Navigator.pop(context, true); // Pass true when returning from settings page
-  }
-
-  @override
-  void dispose() {
-    _numberController.dispose();
-    super.dispose();
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Calibration settings'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            TextField(
-              controller: _numberController,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: 'Enter the reference value:',
-              ),
-            ),
-            SizedBox(height: 16.0),
-            ElevatedButton(
-              onPressed: () {
-                _saveNumber();
-                print('enteredNumber: $number');
-              },
-              child: Text('Save'),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
 
 class HelpPage extends StatelessWidget {
   static const routeName = '/help';
