@@ -1,6 +1,5 @@
 # sample_flutter_android_app
 
-A new Flutter project.
 A Flutter application designed to connect to devices over WiFi. The app enables users to monitor and visualize data from the connected device, save charts, and configure settings.  
 
 ## Features  
@@ -55,10 +54,13 @@ This application utilizes **TCP/IP over Wi-Fi** with **TCP Sockets** for reliabl
    git clone https://github.com/yourusername/WifiRemoteMonitoring.git  
 
 2. Navigate to the project directory: 
+   ```bash 
     cd WifiRemoteMonitoring  
 
 3. Install dependencies: 
+   ```bash  
     flutter pub get  
 
 4. Run the app: 
+   ```bash 
     flutter run  
