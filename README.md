@@ -30,13 +30,9 @@ This application utilizes **TCP/IP over Wi-Fi** with **TCP Sockets** for reliabl
 
 ### Installation  
 
-1. Clone the repository:  
-   ```bash  
-   git clone https://github.com/yourusername/WifiRemoteMonitoring.git  
+1. Clone the repository
 
-2. Navigate to the project directory: 
-   ```bash 
-    cd WifiRemoteMonitoring  
+2. Navigate to the project directory
 
 3. Install dependencies: 
    ```bash  
