@@ -135,7 +135,7 @@ class _MyHomePageState extends State<MyHomePage> {
     await Future.delayed(Duration(seconds: 3)); // Delay before attempting reconnection
     connectToSocket();
   }
-
+  // sample data points 
   void processData() {
     dataList.add(['1.0', '2.5', '0.5']);  
     dataList.add(['1.5','3.0', '1.2']);  
