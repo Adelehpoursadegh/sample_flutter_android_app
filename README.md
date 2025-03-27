@@ -9,7 +9,7 @@ A Flutter android application designed to connect to devices over WiFi.
 - **Chart Saving**: Save generated charts as images to the device gallery  
 - **Navigation**: Multiple pages accessible via a drawer menu  
 
-## Hardware Connection Details  
+## Connection Details  
 
 - **Communication Method**: WiFi using TCP/IP protocol with TCP Sockets  
 - **Required Inputs**:   
@@ -25,7 +25,7 @@ This application utilizes **TCP/IP over Wi-Fi** with **TCP Sockets** for reliabl
 ### Prerequisites  
 
 - Flutter SDK installed  
-- IDE with Flutter and Dart plugins installed    
+- IDE with Flutter and Dart plugins installed (like VS code)  
 - Mobile device connected to the electronic board's network  
 
 ### Installation  
