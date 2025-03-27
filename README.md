@@ -1,6 +1,6 @@
 # sample_flutter_android_app
 
-A Flutter application designed to connect to devices over WiFi. 
+A Flutter android application designed to connect to devices over WiFi. 
 
 ## Features  
 
