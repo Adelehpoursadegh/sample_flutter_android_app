@@ -1,11 +1,11 @@
 # sample_flutter_android_app
 
-A Flutter application designed to connect to devices over WiFi. The app enables users to monitor and visualize data from the connected device, save charts, and configure settings.  
+A Flutter application designed to connect to devices over WiFi. 
 
 ## Features  
 
 - **WiFi Communication**: Establish a connection using an IP address and port number  
-- **Data Visualization**: Display real-time or stored data in a chart format 
+- **Data Visualization**: Display stored data in a chart format 
 - **Chart Saving**: Save generated charts as images to the device gallery  
 - **Navigation**: Multiple pages accessible via a drawer menu  
 

@@ -87,7 +87,6 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   Socket? socket;
-  String receivedData = '';
   List<List<String?>> dataList = [];
   int dataCount = 0;
   double progressPercentage = 0.0;
@@ -106,24 +105,7 @@ class _MyHomePageState extends State<MyHomePage> {
       dataCount = 0;
       progressPercentage = 0.0;
       socket = await Socket.connect(ipAddress, port);
-
-      socket!.listen((List<int> event) {
-        final newData = utf8.decode(event);
-        setState(() {
-          receivedData += newData;
-          processData();
-        });
-      },
-
-        onError: (error) {
-          print('Socket error: $error');
-          reconnect();
-        },
-
-        onDone: () {
-          print('Socket disconnected');
-        },
-      );
+      
     } catch (e) {
       print('Error connecting to socket: $e');
       reconnect(); 
@@ -177,12 +159,12 @@ class _MyHomePageState extends State<MyHomePage> {
                     ),
                   ),
             SizedBox(height: 12.0),
-              if (receivedData=='' && progressPercentage==0.0)
+              if (progressPercentage==0.0)
                 Text(
                   'Enter IP Address:',
                   style: TextStyle(fontSize: 15.0),
                 ),
-              if (receivedData=='' && progressPercentage==0.0)
+              if (progressPercentage==0.0)
                 Container(
                   alignment: Alignment.center,
                   child:TextFormField(
@@ -195,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> {
                   ),
                 ),
               SizedBox(height: 12.0),
-              if (receivedData.isNotEmpty && progressPercentage==0.0)
+              if (progressPercentage==0.0)
                 Text(
                   'Connecting...',
                   style: TextStyle(fontSize: 15.0,
