@@ -1,6 +1,6 @@
 # sample_flutter_android_app
 
-A Flutter android application designed to connect to devices over WiFi. 
+A Flutter Android application designed to connect to microcontrollers over WiFi. 
 
 ## Features  
 
@@ -18,7 +18,7 @@ A Flutter android application designed to connect to devices over WiFi.
 - **Data Format**: JSON/Custom format for sending and receiving data   
 
 ### Connection Type  
-This application utilizes **TCP/IP over Wi-Fi** with **TCP Sockets** for reliable, real-time communication between the mobile app and the electronic board. This ensures stable data transfer, suitable for monitoring and control applications.  
+This application utilizes **TCP/IP over Wi-Fi** with **TCP Sockets** for reliable, real-time communication between the mobile app and the microcontroller. This ensures stable data transfer and is suitable for monitoring and control applications.  
 
 ## Getting Started  
 
@@ -26,7 +26,7 @@ This application utilizes **TCP/IP over Wi-Fi** with **TCP Sockets** for reliabl
 
 - Flutter SDK installed  
 - IDE with Flutter and Dart plugins installed (like VS code)  
-- Mobile device connected to the electronic board's network  
+- Mobile device connected to the Wifi Module's network  
 
 ### Installation  
 
